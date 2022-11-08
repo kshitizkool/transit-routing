@@ -15,7 +15,20 @@ def Dij_generator():
     """
     graph_object = None
     try:
-        # Enter your code here
+        graph_object = open("C:/Users/GVS-ASUS/Downloads/TransportationNetworks-master/Chicago-Sketch/ChicagoSketch_flow.tntp", "r")
+        line = graph_object.readline()
+
+        while(len(line) == True):    
+            l = line.split()
+            source = int(l[0])
+            destination = int(l[1])
+            src_node_cost = int(float(l[3]))
+
+            a = Q1_dijkstra(1,933)
+            print("THE SHORTEST PATH IS:", a)  
+
+        visited_node = [] 
+        initial_node_cost = float('inf')
         return graph_object
     except:
         return graph_object
@@ -38,7 +51,14 @@ def Q1_dijkstra(source: int, destination: int, graph_object) -> int:
     """
     shortest_path_distance = -1
     try:
-        # Enter your code here
+        for neighbour_node in a:
+            if neighbour_node not in visited_node:    
+                
+                visited_node.append[source] = [destination]
+                new_node_cost = initial_node_cost + src_node_cost
+                
+                if(initial_node_cost[neighbour_node] > new_node_cost):
+                    graph_object[neighbour_node] = new_node_cost                              
         return shortest_path_distance
     except:
         return shortest_path_distance
